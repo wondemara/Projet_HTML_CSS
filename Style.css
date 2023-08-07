@@ -1,0 +1,488 @@
+*,::after,::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+:root{
+  --couleur1:#000;
+  --couleur2:#f1f1f1;
+}
+body,html{
+    background-color: var(--couleur1);
+    color: var(--couleur2);
+    scroll-behavior: smooth;
+}
+/* ######################la decortion de mon header du site ################################# */
+.navigation{
+    position: absolute;
+    left: -10;
+    z-index: 100;
+    display: flex;
+    flex-direction: row;  
+    justify-content: space-between;
+    width: 100%;
+    position: fixed;
+    padding: 1rem;
+}
+.nav_logo{
+    display: flex;
+    flex-direction: row;
+    gap: 30%;
+}
+.content_menu{
+    position: absolute;
+    font-size: 20px;
+}
+.instagram i{
+    color: orange;
+    font-size: 20px;
+    margin-top: 5px;
+}
+.facebook i{
+    color: blue;
+    font-size: 20px;
+    margin-top: 5px;
+}
+.github i{
+    color: var(--couleur2);
+    font-size: 20px;
+    margin-top: 5px;
+}
+.linkedin i{
+    color: #f1f1f1;
+    font-size: 20px;
+    margin-top: 5px;
+}
+.menu_burger{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+}
+.tir{
+  background-color: var(--couleur2);
+  width: 70%;
+  height: 4px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: rotation 2s ease-in-out;
+}
+.decoration{
+    background-color: #000;
+    box-shadow: 2px 0 3px grey;
+}
+.active .tir1{
+  top: 50%;
+  left: 20%;
+  transform: rotate(135deg);
+  background-color: orange;
+}
+.active .tir2{
+    top: 50%;
+    left: 20%;
+    transform: rotate(-135deg);
+    background-color: orange;
+}
+.tir1{
+    top: 30%;
+}
+.tir2{
+    top: 60%;
+}
+.active{
+    width: 100%;
+    background-color: #000;
+    position: relative;
+    height: 100vh;
+    position: absolute;
+    animation: menu_navigation 1s ease-in-out forwards alternate;
+    background-size: cover;
+}
+@keyframes menu_navigation {
+    0%{
+        transform: translateY(-50%);
+    }
+}
+.navigation_list li a{
+    font-size: 20px;
+    color: #f1f1f1;
+}
+.navigation_list{
+    display: none;
+}
+.active .menu_burger{
+   position: absolute;
+   top: 2%;
+   right: 2%;
+}
+.active .navigation_list {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.active .navigation_list li{
+    margin: 1rem 0;
+}
+.active .navigation_list li a:hover{
+    border-bottom: 2px solid orange;
+    border-top: 2px solid orange;
+}
+/* ######################la decortion de mon header du site ################################# */
+.heard{
+    width: 100%;
+    height: 100vh;
+    background: no-repeat center/cover url(./src/fond.jpg);
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    font-size: 25px;
+}
+.heard .heard_h1_texte span{
+    color: orange;
+    font-style: italic;
+}
+.heard .heard_h1_texte{
+    margin-bottom: 1rem;
+}
+hr{
+    width: 60%;
+    height: 2px;
+    background-color: orange;
+    margin: 1rem 0;
+}
+.heard div .heard_a_portefolio,.heard div .heard_a_contacter,.section3_a_contacter{
+    display:inline-block;
+    padding: 3px 0;
+    text-align: center;
+    width: 200px;
+    height: 35px;
+    border: 1px solid orange;
+    border-radius: 10px;
+    color: var(--couleur2);
+    margin: 2px;
+    transition: background-color 2s ease-in-out
+                box-shadow 2s ease-in-out;
+}
+.heard p{
+    margin-bottom: 1rem;
+}
+.heard div .heard_a_contacter,.section3_a_contacter{
+    background-color: orange;
+    box-shadow: 0 0 10px 0 grey; 
+}
+.heard div .heard_a_portefolio:hover{
+    background-color: orange;
+    box-shadow: 0 0 10px 0 grey;
+}
+/* la decoration de à la une section 1  */
+.section1{
+   width: 100%; 
+   margin: 0 auto;
+   text-align: center;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin: auto;
+}
+.section1 h1{
+    font-size: calc(20% + 3vw);
+}
+.section1_content{
+    width: 50%;
+}
+.section1::after{
+    content: '';
+    width: 2px;
+    height: 100%;
+    background-color: orange;
+    position: absolute;
+    top: 0;
+    left: 20%;
+    margin: auto;
+}
+.section1::before{
+    content: '';
+    width: 2px;
+    height: 100%;
+    background-color: orange;
+    position: absolute;
+    top: 0;
+    right: 20%;
+    margin: auto;
+}
+.section1_ligne{
+    width: 2px;
+    height: 150px;
+    background-color: orange;
+    margin: auto;
+}
+.section1 .image1 img,.section1 .image2 img{
+    width: 100%;
+    height: auto;
+}
+.section1 .image1,.section1 .image2{
+    border: 1px solid grey;
+    padding: 0 0 1rem 0;
+    text-align: start;
+    box-shadow: 0 0 7px 1px grey;
+}
+.section1 .image1 .section1_titre,.section1 .image2 .section1_titre
+    {   
+    color: orange;
+    margin: 2px 0 2px 5px;
+}
+.section1 .image1 p,.section1 .image2 p{
+    margin: 2px 0 0 5px;
+}
+.section1 h1{
+    margin: 20%;
+}
+/* la decoration de la partie info avec icon */
+.section2 ul{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: auto;
+    background-color: orange;
+}
+.section2_icon{
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    box-shadow: 0 0 7px 2px gray;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    position: relative;
+    margin: 1rem;
+}
+.section2 ul li div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* la decoration de notre newsletter */
+.section3{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0% auto;
+    color: #000;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+.section3 hr{
+    align-items: center;
+    margin-bottom: 10% ;
+    margin: 5% auto;
+}
+.section3 .section3_content h2,.section3 .section3_content h3{
+    font-size: calc(35% + 3vw);
+    margin-bottom: 5%;
+}
+/* la decoration de la section porfolio */
+.section4{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: calc(35% + 3vw)
+}
+.section4 .section4_image{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0% auto;
+}
+
+.section4 .section4_image .div{
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+.section4 .section4_image div img{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    object-fit: cover;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: 1;
+    filter: grayscale();
+}
+.div_info{
+    position: absolute;
+    bottom: 0;
+    line-height: 100px;
+    background-color: #f1f1f1;
+    color: #000;
+    height: 50%;
+    width: 100%;
+    z-index: 2;
+    display: none;
+    animation: transform 0.5s ease-in-out forwards;
+}
+@keyframes transform {
+    0%{
+        bottom: -50%;
+        transform: translateY(-50%);
+    }
+}
+.section4_image div:hover .div_info{
+    display: block;
+}
+.section4_image div:hover img{
+    transform: scale(2);
+    filter: none;
+}
+/* la decoration de notre section contacte */
+.section5{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    color: #000;
+    margin: 0 auto;
+    position: relative;
+}
+input,label{
+    background-color: #f1f1f1;
+    display: block;
+    align-items: start;
+    width: 70%;
+    height: 20px;
+    color: orange;
+}
+.section5 hr{
+    width: 70%;
+    margin: 0%;
+}
+.section5 h2{
+    font-size: calc(20% + 3vw);
+}
+/* la decoration de mon footer  */
+/* la decoration de mon footer  */
+footer{
+    width: 100%;
+    text-align: center;
+}
+footer img{
+    margin: 1rem 0;
+}
+footer hr{
+    background-color: gray;
+    width: 90%;
+    margin: 4px 0;
+    margin: auto;
+}
+footer .footer_fin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer_box{
+    margin: 6px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(34, 238, 34);
+    border-radius: 50%;
+    transform: rotate(90deg);
+    box-shadow: 0 0 5px 2px gray;
+}
+.boutton_return{
+   position : fixed;
+    bottom: 1rem;
+    right: 1rem;
+    display: none;
+}
+.return_box{
+    display: block;
+    animation: anime 0.5s ease-in-out forwards;
+}
+@keyframes anime {
+    0%{
+        bottom: 0%;
+        transform: translateY(20%);
+    }
+}
+.return_box .footer_box{
+    background-color: orange;
+}
+/* la patie resposive du site */
+/* la patie resposive du site */
+@media screen and (max-width:701px) {
+.heard div .heard_a_contacter,.section3_a_contacter,.heard div .heard_a_portefolio{
+    font-size: calc(20% + 3vw)    
+} 
+}
+@media screen and (max-width:780px){
+.section1::after,.section1::before{
+    display: none;
+} 
+.section4 .section4_image  {
+    gap: 2px;
+}  
+.section2_icon{
+    box-shadow: none;
+}    
+.section1_ligne{
+    height: 60px;
+}   
+.section1 .image1 .section1_titre,.section1 .image2 .section1_titre{
+    font-size: calc(20% + 3vw);
+} 
+.section1 .image1 p,.section1 .image2 p{
+    font-size: calc(20% + 2vw);
+}   
+.section2 ul li div p{
+    font-size: calc(20% + 2vw);
+}   
+.section2_icon{
+    width: 30px;
+    height: 30px;
+    margin: 5%;
+}
+  .heard ,.section3{
+   font-size: calc(20% + 3vw);
+    padding: 4%;
+   text-align: center;
+  }
+  hr{
+    align-items: center;
+    margin:5% auto;
+  }
+  .heard div .heard_a_portefolio,.heard div .heard_a_contacter,.section3_a_contacter{
+    width: 50%;
+    max-width: 150px;
+    height: 10%;
+  }
+  .section3_a_contacter{
+    border-radius: 14%;
+  }
+}
